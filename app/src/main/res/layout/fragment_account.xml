@@ -1,22 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:baselineAligned="false"
+    android:orientation="vertical"
+    android:background="@color/background_color">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="244dp"
-        android:background="@color/bright">
+        android:layout_height="240dp"
+        android:background="@color/bright"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="48dp">
             <!--标题搜索-->
             <include layout="@layout/include_title" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="送出 "
+                    android:textColor="@color/text_white"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8980"
+                    android:textColor="@color/text_white"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 钻"
+                    android:textColor="@color/text_white"
+                    android:textSize="@dimen/text_size" />
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginLeft="5dp"
+                    android:src="@mipmap/pay_diamond" />
+
+            </LinearLayout>
         </FrameLayout>
+
+        <com.guojian.inkeimitation.widget.RoundImageView
+            android:id="@+id/account_head_photo"
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:layout_marginTop="17dp"
+            android:src="@mipmap/head_image"
+            app:border_color="@color/background_none"
+            app:border_width="0dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:text="docman"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_size" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="3dp"
+                android:src="@mipmap/global_icon_female" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_marginLeft="3dp"
+                android:src="@mipmap/rank_1" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/button_mine_edit" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="映客号:"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="113134176"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_size" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Ta 好像忘记写签名了 ..."
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_size" />
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        >
+
+    </LinearLayout>
 </LinearLayout>

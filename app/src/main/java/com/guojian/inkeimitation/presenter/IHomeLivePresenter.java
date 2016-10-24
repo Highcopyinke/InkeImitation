@@ -7,4 +7,13 @@ package com.guojian.inkeimitation.presenter;
  */
 public interface IHomeLivePresenter extends IBasePresenter {
 
+    /**
+     * 列表点击
+     */
+    void onLiveClick();
+
+    /**
+     * 账户点击
+     */
+    void onMeClick();
 }

@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -40,6 +39,10 @@ public class HomeLiveFragment extends Fragment implements IHomeLiveFragment, Vie
     ImageButton homePremiere;//开播按钮
     @BindView(R.id.frame_fragment_layout)
     FrameLayout frameFragmentLayout;
+    @BindView(R.id.live_layout)
+    LinearLayout liveLayout;
+    @BindView(R.id.me_layout)
+    LinearLayout meLayout;
 
     private FragmentManager fragmentManager;
     /*
@@ -57,8 +60,7 @@ public class HomeLiveFragment extends Fragment implements IHomeLiveFragment, Vie
         View view = inflater.inflate(R.layout.fragment_home_live, container, false);
         ButterKnife.bind(this, view);
         presenter = new HomeLivePresenterImpl(this);
-        //实现单选
-        ViewTools.checkBox(this, liveCheck, meCheck);
+        initOnClick();
         return view;
     }
 
@@ -78,6 +80,19 @@ public class HomeLiveFragment extends Fragment implements IHomeLiveFragment, Vie
     public void onDestroy() {
         super.onDestroy();
         presenter.onDestroy();
+    }
+
+    /**
+     * 初始化点击事件
+     */
+    private void initOnClick() {
+        //实现单选
+        ViewTools.checkBox(this, liveCheck, meCheck);
+        //列表按钮点击
+        liveLayout.setOnClickListener(this);
+        //账户
+        meLayout.setOnClickListener(this);
+
     }
 
     /**
@@ -105,6 +120,19 @@ public class HomeLiveFragment extends Fragment implements IHomeLiveFragment, Vie
      */
     @Override
     public void onClick(View v) {
-
+        switch (v.getId()) {
+            case R.id.me_layout://账户
+                meCheck.callOnClick();
+                break;
+            case R.id.live_layout://直播列表
+                liveCheck.callOnClick();
+                break;
+            case R.id.live_check://直播列表
+                presenter.onLiveClick();
+                break;
+            case R.id.me_check://账户
+                presenter.onMeClick();
+                break;
+        }
     }
 }

@@ -25,4 +25,20 @@ public class HomeLivePresenterImpl implements IHomeLivePresenter {
     public void onDestroy() {
         view = null;
     }
+
+    /**
+     * 列表点击
+     */
+    @Override
+    public void onLiveClick() {
+        view.showLive();
+    }
+
+    /**
+     * 账户点击
+     */
+    @Override
+    public void onMeClick() {
+        view.showAccount();
+    }
 }
